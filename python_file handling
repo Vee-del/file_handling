@@ -1,0 +1,33 @@
+# File Creation
+try:
+    with open("my_file.txt", "w") as file:
+        file.write("This is line 1\n")
+        file.write("12345\n")
+        file.write("Another line with some text and numbers: 9876\n")
+except PermissionError as e:
+    print(f"Permission Error: {e}")
+except FileNotFoundError as e:
+    print(f"File Not Found Error: {e}")
+finally:
+    print("File creation completed.")
+
+# File Reading and Display
+try:
+    with open("my_file.txt", "r") as file:
+        print("Contents of my_file.txt:")
+        print(file.read())
+except FileNotFoundError as e:
+    print(f"File Not Found Error: {e}")
+
+# File Appending
+try:
+    with open("my_file.txt", "a") as file:
+        file.write("Appending line 1\n")
+        file.write("Appending line 2\n")
+        file.write("Appending line 3\n")
+except PermissionError as e:
+    print(f"Permission Error: {e}")
+except FileNotFoundError as e:
+    print(f"File Not Found Error: {e}")
+finally:
+    print("File appending completed.")
